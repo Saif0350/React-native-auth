@@ -1,20 +1,18 @@
-import { Button, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
-import { useAuth } from "@/context/auth";
 
-export default function login() {
-  const { signIn } = useAuth();
+export default function TabThreeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Tab Foour</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <Button title="Login" onPress={signIn} color={"orange"} />
+      <EditScreenInfo path="app/(tabs)/two.tsx" />
     </View>
   );
 }

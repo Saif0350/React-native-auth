@@ -1,20 +1,33 @@
-import { Button, StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import { useAuth } from "@/context/auth";
 
-export default function login() {
-  const { signIn } = useAuth();
+export default function TabOneScreen() {
+  const { signOut } = useAuth();
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Tab One</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <Button title="Login" onPress={signIn} color={"orange"} />
+
+      <View>
+        <TouchableOpacity
+          style={{
+            backgroundColor: "orange",
+            padding: 5,
+            paddingHorizontal: 9,
+          }}
+        >
+          <Text style={{ color: "white" }} onPress={signOut}>
+            Logout
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
